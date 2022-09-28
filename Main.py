@@ -1,36 +1,32 @@
-class Node:
-  def __init__(self, data):
-    self.data = data
-    self.next = None
+def push(self,data):
+    node = Node(data,self.head)
+    self.head=node
+
+def pop(self):
+    if self.head is None:
+        print("Stack is Empty")
+        return
+    print("&quot";\n Poppped item :", self.head.data)
+    self.head = self.head.next
 
 
-class Stack:
-  def __init__(self):
-    self.head = None
 
-  def push(self, data) -> None:
-    # Write your code here
+#QUEUE
+def enqueue(self,data):
+    node = Node(data,None)
+    if self.front is None:
+        self.front = node
+        self.rear = node
+    else:
+        self.rear.next = node
+        self.rear = node
 
-  def pop(self) -> None:
-    # Write your code here
-
-  def status(self):
-    """
-    It prints all the elements of stack.
-    """
-    # Write your code here  
-
-
-# Do not change the following code
-stack = Stack()
-operations = []
-for specific_operation in input().split(','):
-    operations.append(specific_operation.strip())
-input_data = input()
-data = input_data.split(',')
-for i in range(len(operations)):
-  if operations[i] == "push":
-    stack.push(int(data[i]))
-  elif operations[i] == "pop":
-    stack.pop()
-stack.status()
+def dequeue(self):
+    if self.front is None:
+        print(&quot;Queue is empty!&quot;)
+        return
+    else:
+        print(&quot;\nPopped item:&quot;,self.front.data)
+        self.front = self.front.next
+    if self.front is None:
+        self.rear = None
